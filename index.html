@@ -102,21 +102,6 @@
 
             if (username === 'admin' && password === 'admin123') {
                 alert('Login successful!');
-                document.body.innerHTML = `
-                <div style="padding: 20px; font-family: Arial, sans-serif;">
-                    <h1 style="color: #3f51b5;">Dashboard</h1>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 10px;"><a href="#" style="text-decoration: none; color: #3f51b5;">Site List</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="text-decoration: none; color: #3f51b5;">Org Chart OPS</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="text-decoration: none; color: #3f51b5;">Data Team</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="text-decoration: none; color: #3f51b5;">Data Management</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="text-decoration: none; color: #3f51b5;">Database Resign</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="text-decoration: none; color: #3f51b5;">Tools</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="text-decoration: none; color: #3f51b5;">Data Vehicle</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="text-decoration: none; color: #3f51b5;">Data DOP & Homebase</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="text-decoration: none; color: #3f51b5;">Team HQ Tools</a></li>
-                    </ul>
-                </div>`;
                 return false;
             } else {
                 alert('Invalid username or password.');
