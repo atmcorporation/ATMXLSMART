@@ -1,98 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duty Roster SMARTFREND South Sumatera</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #77aaff 3px solid;
-        }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        header ul {
-            padding: 0;
-            list-style: none;
-        }
-        header li {
-            float: left;
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
-        table {
-            width: 100%;
-            margin: 20px 0;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #333;
-            color: white;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Duty Roster SMARTFREND South Sumatera - November 2024</h1>
-        </div>
-    </header>
-    <div class="container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Sub Cluster</th>
-                    <th>Field Engineer</th>
-                    <th>Technician</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>SS AR Hakim1</td>
-                    <td>ANGGI LEGI NUGROHO</td>
-                    <td>AHMAD SOLEH</td>
-                </tr>
-                <tr>
-                    <td>SS AR Hakim2</td>
-                    <td>REYNALDIE BRATA</td>
-                    <td>OKY JAYA SAPUTRA</td>
-                </tr>
-                <tr>
-                    <td>SS AR Hakim3</td>
-                    <td>ROHIM HERMAWAN</td>
-                    <td>NANA SUTISNA</td>
-                </tr>
-                <!-- Tambahkan baris lainnya sesuai dengan data dari file Excel -->
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Duty Roster Management</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            background-color: #f8f9fa;  
+        }  
+        .navbar {  
+            background-color: #004080;  
+        }  
+        .navbar-brand, .nav-link {  
+            color: #fff !important;  
+        }  
+        .container {  
+            margin-top: 20px;  
+        }  
+        footer {  
+            background-color: #004080;  
+            color: #fff;  
+            text-align: center;  
+            padding: 10px 0;  
+            position: fixed;  
+            bottom: 0;  
+            width: 100%;  
+        }  
+        .table-container {  
+            margin-bottom: 50px;  
+        }  
+    </style>  
+</head>  
+<body>  
+  
+    <nav class="navbar navbar-expand-lg">  
+        <div class="container-fluid">  
+            <a class="navbar-brand" href="#">Duty Roster</a>  
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">  
+                <span class="navbar-toggler-icon"></span>  
+            </button>  
+            <div class="collapse navbar-collapse" id="navbarNav">  
+                <ul class="navbar-nav ms-auto">  
+                    <li class="nav-item">  
+                        <a class="nav-link" href="#">Home</a>  
+                    </li>  
+                    <li class="nav-item">  
+                        <a class="nav-link" href="#">Edit Roster</a>  
+                    </li>  
+                    <li class="nav-item">  
+                        <a class="nav-link" href="#">Contact</a>  
+                    </li>  
+                </ul>  
+            </div>  
+        </div>  
+    </nav>  
+  
+    <div class="container">  
+        <h1 class="mt-4">Duty Roster Management</h1>  
+        <p>Manage and edit your duty rosters efficiently.</p>  
+  
+        <!-- Example Table for Sheet 1 -->  
+        <div class="table-container">  
+            <h2>Sheet 1: Example Sheet Name</h2>  
+            <table class="table table-striped">  
+                <thead>  
+                    <tr>  
+                        <th>Column 1</th>  
+                        <th>Column 2</th>  
+                        <th>Column 3</th>  
+                        <!-- Add more columns as needed -->  
+                    </tr>  
+                </thead>  
+                <tbody>  
+                    <tr>  
+                        <td>Data 1</td>  
+                        <td>Data 2</td>  
+                        <td>Data 3</td>  
+                        <!-- Add more data rows as needed -->  
+                    </tr>  
+                    <!-- Repeat for more rows -->  
+                </tbody>  
+            </table>  
+        </div>  
+  
+        <!-- Repeat the above block for each sheet in your Excel file -->  
+    </div>  
+  
+    <footer>  
+        <p>&copy; 2025 Duty Roster Management. All rights reserved.</p>  
+    </footer>  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>  
+</body>  
+</html>  
