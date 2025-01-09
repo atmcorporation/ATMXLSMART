@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - SmartOps</title>
+    <title>Duty Roster SMARTFREND South Sumatera</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,149 +11,88 @@
             padding: 0;
             background-color: #f4f4f4;
         }
-
-        /* Header */
-        .header {
-            background-color: #3f51b5;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
         }
-
-        .header .logo {
-            font-size: 24px;
-            font-weight: bold;
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
         }
-
-        .header nav {
-            display: flex;
-            gap: 15px;
-        }
-
-        .header nav a {
-            color: white;
+        header a {
+            color: #fff;
             text-decoration: none;
+            text-transform: uppercase;
             font-size: 16px;
         }
-
-        .header nav a:hover {
-            text-decoration: underline;
+        header ul {
+            padding: 0;
+            list-style: none;
         }
-
-        /* Content */
-        .content {
-            padding: 20px;
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
         }
-
-        .content h1 {
-            color: #3f51b5;
-        }
-
-        .table-container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
         table {
             width: 100%;
-            border-collapse: collapse;
             margin: 20px 0;
+            border-collapse: collapse;
         }
-
-        table th, table td {
+        table, th, td {
             border: 1px solid #ddd;
-            padding: 8px;
+        }
+        th, td {
+            padding: 12px;
             text-align: left;
         }
-
-        table th {
-            background-color: #3f51b5;
+        th {
+            background-color: #333;
             color: white;
         }
-
-        /* Footer */
-        .footer {
-            background-color: #3f51b5;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
         }
-
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="logo">SmartOps</div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-    </div>
-
-    <div class="content">
-        <h1>Dashboard</h1>
-        <div class="table-container">
-            <h2>Sit List</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Column 1</th>
-                        <th>Column 2</th>
-                        <th>Column 3</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Data 1</td>
-                        <td>Data 2</td>
-                        <td>Data 3</td>
-                    </tr>
-                    <tr>
-                        <td>Data 4</td>
-                        <td>Data 5</td>
-                        <td>Data 6</td>
-                    </tr>
-                </tbody>
-            </table>
+    <header>
+        <div class="container">
+            <h1>Duty Roster SMARTFREND South Sumatera - November 2024</h1>
         </div>
-
-        <div class="table-container">
-            <h2>Org Chart OPS</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Column 1</th>
-                        <th>Column 2</th>
-                        <th>Column 3</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Data A</td>
-                        <td>Data B</td>
-                        <td>Data C</td>
-                    </tr>
-                    <tr>
-                        <td>Data D</td>
-                        <td>Data E</td>
-                        <td>Data F</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="footer">
-        &copy; 2025 SmartOps. All Rights Reserved.
+    </header>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sub Cluster</th>
+                    <th>Field Engineer</th>
+                    <th>Technician</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SS AR Hakim1</td>
+                    <td>ANGGI LEGI NUGROHO</td>
+                    <td>AHMAD SOLEH</td>
+                </tr>
+                <tr>
+                    <td>SS AR Hakim2</td>
+                    <td>REYNALDIE BRATA</td>
+                    <td>OKY JAYA SAPUTRA</td>
+                </tr>
+                <tr>
+                    <td>SS AR Hakim3</td>
+                    <td>ROHIM HERMAWAN</td>
+                    <td>NANA SUTISNA</td>
+                </tr>
+                <!-- Tambahkan baris lainnya sesuai dengan data dari file Excel -->
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
