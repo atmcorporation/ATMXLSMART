@@ -1,35 +1,43 @@
 <!DOCTYPE html>  
-<html lang="en">  
+<html lang="id">  
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Duty Roster Management</title>  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">  
+    <title>Aplikasi Database Karyawan</title>  
+    <link rel="stylesheet" href="styles.css">  
     <style>  
         body {  
             font-family: Arial, sans-serif;  
-            background-color: #f8f9fa;  
+            margin: 0;  
+            padding: 0;  
+            background-color: #f4f4f4;  
         }  
-        .navbar {  
-            background-color: #004080;  
-        }  
-        .navbar-brand, .nav-link {  
-            color: #fff !important;  
-        }  
-        .hero {  
-            background: linear-gradient(to right, #004080, #007bff);  
-            color: white;  
-            padding: 60px 20px;  
+        header {  
+            background: #007bff;  
+            color: #fff;  
+            padding: 10px 0;  
             text-align: center;  
         }  
-        .table-container {  
-            margin-top: 20px;  
+        .container {  
+            width: 80%;  
+            margin: auto;  
+            overflow: hidden;  
+        }  
+        .feature {  
+            background: #fff;  
+            padding: 20px;  
+            margin: 20px 0;  
+            border-radius: 5px;  
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+        }  
+        h2 {  
+            color: #333;  
         }  
         footer {  
-            background-color: #004080;  
-            color: #fff;  
             text-align: center;  
             padding: 10px 0;  
+            background: #007bff;  
+            color: #fff;  
             position: relative;  
             bottom: 0;  
             width: 100%;  
@@ -38,69 +46,36 @@
 </head>  
 <body>  
   
-    <nav class="navbar navbar-expand-lg">  
-        <div class="container-fluid">  
-            <a class="navbar-brand" href="#">Duty Roster</a>  
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">  
-                <span class="navbar-toggler-icon"></span>  
-            </button>  
-            <div class="collapse navbar-collapse" id="navbarNav">  
-                <ul class="navbar-nav ms-auto">  
-                    <li class="nav-item">  
-                        <a class="nav-link" href="#">Home</a>  
-                    </li>  
-                    <li class="nav-item">  
-                        <a class="nav-link" href="#">Edit Roster</a>  
-                    </li>  
-                    <li class="nav-item">  
-                        <a class="nav-link" href="#">Contact</a>  
-                    </li>  
-                </ul>  
-            </div>  
-        </div>  
-    </nav>  
+<header>  
+    <h1>Aplikasi Database Karyawan</h1>  
+</header>  
   
-    <div class="hero">  
-        <h1>Driving Digital Infrastructure Innovation</h1>  
-        <p>Manage and edit your duty rosters efficiently.</p>  
+<div class="container">  
+    <div class="feature">  
+        <h2>Fitur Utama</h2>  
+        <ul>  
+            <li>Manajemen Data Karyawan</li>  
+            <li>Pengelolaan Gaji dan Tunjangan</li>  
+            <li>Absensi dan Cuti Karyawan</li>  
+            <li>Laporan Kinerja Karyawan</li>  
+            <li>Integrasi dengan Sistem Lain</li>  
+        </ul>  
     </div>  
   
-    <div class="container">  
-        <div class="table-container">  
-            <h2>Duty Roster</h2>  
-            <table class="table table-striped">  
-                <thead>  
-                    <tr>  
-                        <th>Nama</th>  
-                        <th>Tanggal</th>  
-                        <th>Jadwal</th>  
-                        <th>Posisi</th>  
-                        <!-- Tambahkan lebih banyak kolom sesuai kebutuhan -->  
-                    </tr>  
-                </thead>  
-                <tbody>  
-                    <tr>  
-                        <td>John Doe</td>  
-                        <td>2025-01-01</td>  
-                        <td>08:00 - 16:00</td>  
-                        <td>Supervisor</td>  
-                    </tr>  
-                    <tr>  
-                        <td>Jane Smith</td>  
-                        <td>2025-01-02</td>  
-                        <td>16:00 - 00:00</td>  
-                        <td>Operator</td>  
-                    </tr>  
-                    <!-- Tambahkan lebih banyak baris sesuai data Anda -->  
-                </tbody>  
-            </table>  
-        </div>  
+    <div class="feature">  
+        <h2>Keunggulan Aplikasi</h2>  
+        <p>Aplikasi ini dirancang untuk memudahkan pengelolaan data karyawan dengan antarmuka yang user-friendly dan fitur yang lengkap.</p>  
     </div>  
   
-    <footer>  
-        <p>&copy; 2025 Duty Roster Management. All rights reserved.</p>  
-    </footer>  
+    <div class="feature">  
+        <h2>Testimoni Pengguna</h2>  
+        <p>"Aplikasi ini sangat membantu dalam mengelola data karyawan kami. Sangat direkomendasikan!" - Manajer HR</p>  
+    </div>  
+</div>  
   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>  
+<footer>  
+    <p>&copy; 2025 Aplikasi Database Karyawan. Semua hak dilindungi.</p>  
+</footer>  
+  
 </body>  
 </html>  
