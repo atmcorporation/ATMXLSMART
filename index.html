@@ -3,111 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - SmartOps</title>
+    <title>Dashboard - SmartOps</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #e8eaf6; /* Soft blue background */
+            background-color: #f4f4f4;
         }
-        .login-container {
-            width: 100%;
-            max-width: 400px;
-            padding: 20px;
-            background: #ffffff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        .login-container h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #3f51b5; /* Matching blue color */
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #3f51b5; /* Matching blue color */
-        }
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .form-group input:focus {
-            outline: none;
-            border-color: #3f51b5; /* Matching blue color */
-        }
-        .login-btn {
-            width: 100%;
-            padding: 10px;
-            background-color: #3f51b5; /* Matching blue color */
+
+        /* Header */
+        .header {
+            background-color: #3f51b5;
             color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header nav a {
+            color: white;
+            text-decoration: none;
             font-size: 16px;
         }
-        .login-btn:hover {
-            background-color: #303f9f; /* Darker blue on hover */
-        }
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #666;
-        }
-        .footer a {
-            color: #3f51b5; /* Matching blue color */
-            text-decoration: none;
-        }
-        .footer a:hover {
+
+        .header nav a:hover {
             text-decoration: underline;
         }
+
+        /* Content */
+        .content {
+            padding: 20px;
+        }
+
+        .content h1 {
+            color: #3f51b5;
+        }
+
+        .table-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #3f51b5;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #3f51b5;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h1>Login</h1>
-        <form onsubmit="return validateLogin()">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter your username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            </div>
-            <button type="submit" class="login-btn">Login</button>
-        </form>
-        <div class="footer">
-            <p>Forgot your password? <a href="#">Reset here</a></p>
+    <div class="header">
+        <div class="logo">SmartOps</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <h1>Dashboard</h1>
+        <div class="table-container">
+            <h2>Sit List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Column 1</th>
+                        <th>Column 2</th>
+                        <th>Column 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Data 1</td>
+                        <td>Data 2</td>
+                        <td>Data 3</td>
+                    </tr>
+                    <tr>
+                        <td>Data 4</td>
+                        <td>Data 5</td>
+                        <td>Data 6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <h2>Org Chart OPS</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Column 1</th>
+                        <th>Column 2</th>
+                        <th>Column 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Data A</td>
+                        <td>Data B</td>
+                        <td>Data C</td>
+                    </tr>
+                    <tr>
+                        <td>Data D</td>
+                        <td>Data E</td>
+                        <td>Data F</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-    <script>
-        function validateLogin() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
 
-            if (username === 'admin' && password === 'admin123') {
-                alert('Login successful!');
-                return false;
-            } else {
-                alert('Invalid username or password.');
-                return false;
-            }
-        }
-    </script>
+    <div class="footer">
+        &copy; 2025 SmartOps. All Rights Reserved.
+    </div>
 </body>
 </html>
