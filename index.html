@@ -3,7 +3,7 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Database Karyawan</title>  
+    <title>XLSMART DATABASE</title>  
     <style>  
         body {  
             font-family: Arial, sans-serif;  
@@ -28,7 +28,7 @@
             text-align: left;  
         }  
         th {  
-            background-color: #35424a;  
+            background-color: #007BFF; /* Warna biru */  
             color: white;  
         }  
         tr:nth-child(even) {  
@@ -46,13 +46,13 @@
         .button {  
             margin: 20px;  
             padding: 10px 20px;  
-            background-color: #35424a;  
+            background-color: #007BFF; /* Warna biru */  
             color: white;  
             border: none;  
             cursor: pointer;  
         }  
         .button:hover {  
-            background-color: #45a049;  
+            background-color: #0056b3; /* Warna biru lebih gelap saat hover */  
         }  
     </style>  
 </head>  
@@ -77,29 +77,47 @@
     <table id="employeeTable">  
         <thead>  
             <tr>  
-                <th>Nama</th>  
-                <th>Jabatan</th>  
-                <th>Tanggal</th>  
-                <th>Jam Masuk</th>  
-                <th>Jam Keluar</th>  
-                <th>Aksi</th>  
+                <th>Name</th>  
+                <th>NIK</th>  
+                <th>Position</th>  
+                <th>Service Manager</th>  
+                <th>Region</th>  
+                <th>Cluster</th>  
+                <th>Phone</th>  
+                <th>Email</th>  
+                <th>KTP</th>  
+                <th>Join Date</th>  
+                <th>License Status</th>  
+                <th>Actions</th>  
             </tr>  
         </thead>  
         <tbody>  
             <tr>  
                 <td>Nama Karyawan 1</td>  
+                <td>123456</td>  
                 <td>Jabatan 1</td>  
-                <td>01-11-2024</td>  
-                <td>08:00</td>  
-                <td>17:00</td>  
+                <td>Manager 1</td>  
+                <td>Region 1</td>  
+                <td>Cluster 1</td>  
+                <td>08123456789</td>  
+                <td>karyawan1@example.com</td>  
+                <td>1234567890123456</td>  
+                <td>01-01-2020</td>  
+                <td>Aktif</td>  
                 <td><button class="button" onclick="editData(this)">Edit</button></td>  
             </tr>  
             <tr>  
                 <td>Nama Karyawan 2</td>  
+                <td>654321</td>  
                 <td>Jabatan 2</td>  
-                <td>01-11-2024</td>  
-                <td>08:30</td>  
-                <td>17:30</td>  
+                <td>Manager 2</td>  
+                <td>Region 2</td>  
+                <td>Cluster 2</td>  
+                <td>08987654321</td>  
+                <td>karyawan2@example.com</td>  
+                <td>6543210987654321</td>  
+                <td>01-02-2020</td>  
+                <td>Aktif</td>  
                 <td><button class="button" onclick="editData(this)">Edit</button></td>  
             </tr>  
             <!-- Tambahkan lebih banyak data di sini -->  
