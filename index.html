@@ -3,7 +3,7 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>XLSMART DATABASE</title>  
+    <title>Database Karyawan</title>  
     <style>  
         body {  
             font-family: Arial, sans-serif;  
@@ -54,12 +54,16 @@
         .button:hover {  
             background-color: #0056b3; /* Warna biru lebih gelap saat hover */  
         }  
+        #importForm {  
+            display: none;  
+            margin: 20px;  
+        }  
     </style>  
 </head>  
 <body>  
   
 <header>  
-    <h1>Database Karyawan</h1>  
+    <h1>Data Roster Karyawan</h1>  
 </header>  
   
 <main>  
@@ -67,7 +71,7 @@
     <button class="button" onclick="document.getElementById('importForm').style.display='block'">Import Data</button>  
     <button class="button" onclick="exportData()">Export Data</button>  
       
-    <div id="importForm" style="display:none; margin: 20px;">  
+    <div id="importForm">  
         <h3>Import Data Karyawan</h3>  
         <input type="file" id="fileInput" />  
         <button class="button" onclick="importData()">Import</button>  
@@ -126,7 +130,7 @@
 </main>  
   
 <footer>  
-    <p>&copy; 2025 ATM Corporation Management. All rights reserved.</p>  
+    <p>&copy; 2025 Database Karyawan. All rights reserved.</p>  
 </footer>  
   
 <script>  
