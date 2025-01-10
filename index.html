@@ -3,269 +3,54 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Database Karyawan</title>  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>  
-    <style>  
-        body {  
-            font-family: Arial, sans-serif;  
-            margin: 0;  
-            padding: 0;  
-            background-color: #f4f4f4;  
-        }  
-        header {  
-            background: #35424a;  
-            color: #ffffff;  
-            padding: 10px 0;  
-            text-align: center;  
-        }  
-        table {  
-            width: 80%;  
-            margin: 20px auto;  
-            border-collapse: collapse;  
-        }  
-        th, td {  
-            padding: 10px;  
-            border: 1px solid #dddddd;  
-            text-align: left;  
-        }  
-        th {  
-            background-color: #007BFF; /* Warna biru */  
-            color: white;  
-        }  
-        tr:nth-child(even) {  
-            background-color: #f2f2f2;  
-        }  
-        footer {  
-            text-align: center;  
-            padding: 20px;  
-            background: #35424a;  
-            color: white;  
-            position: relative;  
-            bottom: 0;  
-            width: 100%;  
-        }  
-        .button {  
-            margin: 20px;  
-            padding: 10px 20px;  
-            background-color: #007BFF; /* Warna biru */  
-            color: white;  
-            border: none;  
-            cursor: pointer;  
-        }  
-        .button:hover {  
-            background-color: #0056b3; /* Warna biru lebih gelap saat hover */  
-        }  
-        #importForm {  
-            display: none;  
-            margin: 20px;  
-        }  
-        #filterInput {  
-            margin: 20px;  
-            width: 80%;  
-            padding: 10px;  
-        }  
-    </style>  
+    <title>Tower Bersama</title>  
+    <link rel="stylesheet" href="styles.css"> <!-- Link ke file CSS eksternal -->  
+    <link rel="icon" href="https://www.tower-bersama.com/assets/img/favicon.png" type="image/png">  
 </head>  
 <body>  
+    <header>  
+        <div class="logo">  
+            <img src="https://www.tower-bersama.com/assets/img/logo.png" alt="Logo Tower Bersama">  
+        </div>  
+        <nav>  
+            <ul>  
+                <li><a href="#home">Beranda</a></li>  
+                <li><a href="#about">Tentang Kami</a></li>  
+                <li><a href="#services">Layanan</a></li>  
+                <li><a href="#contact">Kontak</a></li>  
+            </ul>  
+        </nav>  
+    </header>  
   
-<header>  
-    <h1>Data Roster Karyawan</h1>  
-</header>  
+    <main>  
+        <section id="home">  
+            <h1>Selamat Datang di Tower Bersama</h1>  
+            <p>Kami adalah penyedia infrastruktur telekomunikasi terkemuka di Indonesia.</p>  
+        </section>  
   
-<main>  
-    <h2>Data Roster Karyawan</h2>  
-    <input type="text" id="filterInput" placeholder="Filter by Name..." onkeyup="filterData()">  
-    <button class="button" onclick="document.getElementById('importForm').style.display='block'">Import Data</button>  
-    <button class="button" onclick="exportData()">Export Data</button>  
-    <button class="button" onclick="deleteSelected()">Delete Selected</button>  
-      
-    <div id="importForm">  
-        <h3>Import Data Karyawan</h3>  
-        <input type="file" id="fileInput" accept=".xlsx, .xls" />  
-        <button class="button" onclick="importData()">Import</button>  
-        <button class="button" onclick="document.getElementById('importForm').style.display='none'">Cancel</button>  
-    </div>  
+        <section id="about">  
+            <h2>Tentang Kami</h2>  
+            <p>Tower Bersama Infrastructure Tbk berkomitmen untuk menyediakan layanan terbaik dalam infrastruktur telekomunikasi.</p>  
+        </section>  
   
-    <table id="employeeTable">  
-        <thead>  
-            <tr>  
-                <th><input type="checkbox" id="selectAll" onclick="toggleSelectAll(this)"></th>  
-                <th>Name</th>  
-                <th>NIK</th>  
-                <th>Position</th>  
-                <th>Service Manager</th>  
-                <th>Region</th>  
-                <th>Cluster</th>  
-                <th>Phone</th>  
-                <th>Email</th>  
-                <th>KTP</th>  
-                <th>Join Date</th>  
-                <th>License Status</th>  
-                <th>Actions</th>  
-            </tr>  
-        </thead>  
-        <tbody>  
-            <!-- Data akan ditambahkan di sini -->  
-        </tbody>  
-    </table>  
-</main>  
+        <section id="services">  
+            <h2>Layanan Kami</h2>  
+            <ul>  
+                <li>Penyewaan Menara Telekomunikasi</li>  
+                <li>Solusi Infrastruktur</li>  
+                <li>Manajemen Jaringan</li>  
+            </ul>  
+        </section>  
   
-<footer>  
-    <p>&copy; 2025 Database Karyawan. All rights reserved.</p>  
-</footer>  
+        <section id="contact">  
+            <h2>Kontak Kami</h2>  
+            <p>Email: info@tower-bersama.com</p>  
+            <p>Telepon: +62 21 1234 5678</p>  
+        </section>  
+    </main>  
   
-<script>  
-    function saveDataToLocalStorage() {  
-        const tableData = [];  
-        const rows = document.querySelectorAll('#employeeTable tbody tr');  
-        rows.forEach(row => {  
-            const rowData = [];  
-            const cells = row.querySelectorAll('td');  
-            cells.forEach(cell => {  
-                rowData.push(cell.innerText);  
-            });  
-            tableData.push(rowData);  
-        });  
-        localStorage.setItem('employeeData', JSON.stringify(tableData));  
-    }  
-  
-    function loadDataFromLocalStorage() {  
-        const storedData = localStorage.getItem('employeeData');  
-        if (storedData) {  
-            const tableBody = document.getElementById('employeeTable').getElementsByTagName('tbody')[0];  
-            const jsonData = JSON.parse(storedData);  
-            jsonData.forEach(row => {  
-                const newRow = tableBody.insertRow();  
-                row.forEach(cell => {  
-                    const newCell = newRow.insertCell();  
-                    newCell.textContent = cell;  
-                });  
-                const actionCell = newRow.insertCell();  
-                actionCell.innerHTML = '<button class="button" onclick="editData(this)">Edit</button>';  
-                const checkboxCell = newRow.insertCell();  
-                checkboxCell.innerHTML = '<input type="checkbox" class="rowCheckbox">';  
-            });  
-        }  
-    }  
-  
-    function exportData() {  
-        const tableData = [];  
-        const rows = document.querySelectorAll('#employeeTable tbody tr');  
-        rows.forEach(row => {  
-            const rowData = [];  
-            const cells = row.querySelectorAll('td');  
-            cells.forEach(cell => {  
-                rowData.push(cell.innerText);  
-            });  
-            tableData.push(rowData);  
-        });  
-  
-        const ws = XLSX.utils.aoa_to_sheet(tableData);  
-        const wb = XLSX.utils.book_new();  
-        XLSX.utils.book_append_sheet(wb, ws, "Data Karyawan");  
-        XLSX.writeFile(wb, "Data_Karyawan.xlsx");  
-    }  
-  
-    function importData() {  
-        const fileInput = document.getElementById('fileInput');  
-        const file = fileInput.files[0];  
-        if (file) {  
-            const reader = new FileReader();  
-            reader.onload = function(e) {  
-                const data = new Uint8Array(e.target.result);  
-                const workbook = XLSX.read(data, { type: 'array' });  
-                const firstSheetName = workbook.SheetNames[0];  
-                const worksheet = workbook.Sheets[firstSheetName];  
-                const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });  
-                  
-                // Clear existing rows  
-                const tableBody = document.getElementById('employeeTable').getElementsByTagName('tbody')[0];  
-                tableBody.innerHTML = '';  
-  
-                // Add new rows  
-                jsonData.forEach((row, index) => {  
-                    if (index > 0) { // Skip header row  
-                        const newRow = tableBody.insertRow();  
-                        row.forEach(cell => {  
-                            const newCell = newRow.insertCell();  
-                            newCell.textContent = cell;  
-                        });  
-                        const actionCell = newRow.insertCell();  
-                        actionCell.innerHTML = '<button class="button" onclick="editData(this)">Edit</button>';  
-                        const checkboxCell = newRow.insertCell();  
-                        checkboxCell.innerHTML = '<input type="checkbox" class="rowCheckbox">';  
-                    }  
-                });  
-  
-                // Simpan data ke localStorage  
-                saveDataToLocalStorage();  
-            };  
-            reader.readAsArrayBuffer(file);  
-        } else {  
-            alert("Silakan pilih file untuk diimpor.");  
-        }  
-    }  
-  
-    function editData(button) {  
-        const row = button.parentNode.parentNode;  
-        const cells = row.getElementsByTagName('td');  
-        for (let i = 1; i < cells.length - 2; i++) { // Menghindari kolom aksi dan checkbox  
-            const currentValue = cells[i].innerText;  
-            const input = document.createElement('input');  
-            input.value = currentValue;  
-            cells[i].innerHTML = '';  
-            cells[i].appendChild(input);  
-        }  
-        button.innerText = 'Simpan';  
-        button.setAttribute('onclick', 'saveData(this)');  
-    }  
-  
-    function saveData(button) {  
-        const row = button.parentNode.parentNode;  
-        const cells = row.getElementsByTagName('td');  
-        for (let i = 1; i < cells.length - 2; i++) { // Menghindari kolom aksi dan checkbox  
-            const input = cells[i].getElementsByTagName('input')[0];  
-            cells[i].innerHTML = input.value;  
-        }  
-        button.innerText = 'Edit';  
-        button.setAttribute('onclick', 'editData(this)');  
-  
-        // Simpan data ke localStorage setelah edit  
-        saveDataToLocalStorage();  
-    }  
-  
-    function filterData() {  
-        const filterValue = document.getElementById('filterInput').value.toLowerCase();  
-        const rows = document.querySelectorAll('#employeeTable tbody tr');  
-        rows.forEach(row => {  
-            const nameCell = row.cells[1].textContent.toLowerCase(); // Kolom Name  
-            if (nameCell.includes(filterValue)) {  
-                row.style.display = '';  
-            } else {  
-                row.style.display = 'none';  
-            }  
-        });  
-    }  
-  
-    function toggleSelectAll(selectAllCheckbox) {  
-        const checkboxes = document.querySelectorAll('.rowCheckbox');  
-        checkboxes.forEach(checkbox => {  
-            checkbox.checked = selectAllCheckbox.checked;  
-        });  
-    }  
-  
-    function deleteSelected() {  
-        const checkboxes = document.querySelectorAll('.rowCheckbox:checked');  
-        checkboxes.forEach(checkbox => {  
-            const row = checkbox.parentNode.parentNode;  
-            row.parentNode.removeChild(row);  
-        });  
-        saveDataToLocalStorage(); // Simpan perubahan ke localStorage  
-    }  
-  
-    // Memuat data saat halaman dimuat  
-    window.onload = loadDataFromLocalStorage;  
-</script>  
-  
+    <footer>  
+        <p>&copy; 2025 Tower Bersama Infrastructure Tbk. Semua hak dilindungi.</p>  
+    </footer>  
 </body>  
 </html>  
