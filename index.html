@@ -3,7 +3,8 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>XLSMART DATABASE</title>  
+    <title>Database Karyawan</title>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>  
     <style>  
         body {  
             font-family: Arial, sans-serif;  
@@ -63,17 +64,17 @@
 <body>  
   
 <header>  
-    <h1>ATM SMART DATABASE</h1>  
+    <h1>Data Roster Karyawan</h1>  
 </header>  
   
 <main>  
-    <h2>Smart Database</h2>  
+    <h2>Data Roster Karyawan</h2>  
     <button class="button" onclick="document.getElementById('importForm').style.display='block'">Import Data</button>  
     <button class="button" onclick="exportData()">Export Data</button>  
       
     <div id="importForm">  
         <h3>Import Data Karyawan</h3>  
-        <input type="file" id="fileInput" />  
+        <input type="file" id="fileInput" accept=".xlsx, .xls" />  
         <button class="button" onclick="importData()">Import</button>  
         <button class="button" onclick="document.getElementById('importForm').style.display='none'">Cancel</button>  
     </div>  
@@ -96,46 +97,17 @@
             </tr>  
         </thead>  
         <tbody>  
-            <tr>  
-                <td>Nama Karyawan 1</td>  
-                <td>123456</td>  
-                <td>Jabatan 1</td>  
-                <td>Manager 1</td>  
-                <td>Region 1</td>  
-                <td>Cluster 1</td>  
-                <td>08123456789</td>  
-                <td>karyawan1@example.com</td>  
-                <td>1234567890123456</td>  
-                <td>01-01-2020</td>  
-                <td>Aktif</td>  
-                <td><button class="button" onclick="editData(this)">Edit</button></td>  
-            </tr>  
-            <tr>  
-                <td>Nama Karyawan 2</td>  
-                <td>654321</td>  
-                <td>Jabatan 2</td>  
-                <td>Manager 2</td>  
-                <td>Region 2</td>  
-                <td>Cluster 2</td>  
-                <td>08987654321</td>  
-                <td>karyawan2@example.com</td>  
-                <td>6543210987654321</td>  
-                <td>01-02-2020</td>  
-                <td>Aktif</td>  
-                <td><button class="button" onclick="editData(this)">Edit</button></td>  
-            </tr>  
-            <!-- Tambahkan lebih banyak data di sini -->  
+            <!-- Data akan ditambahkan di sini -->  
         </tbody>  
     </table>  
 </main>  
   
 <footer>  
-    <p>&copy; 2025 ATM Corporation Management. All rights reserved.</p>  
+    <p>&copy; 2025 Database Karyawan. All rights reserved.</p>  
 </footer>  
   
 <script>  
     function exportData() {  
-        // Logika untuk mengekspor data  
         alert("Fitur ekspor data belum diimplementasikan.");  
     }  
   
@@ -143,8 +115,32 @@
         const fileInput = document.getElementById('fileInput');  
         const file = fileInput.files[0];  
         if (file) {  
-            // Logika untuk mengimpor data dari file  
-            alert("Fitur impor data belum diimplementasikan.");  
+            const reader = new FileReader();  
+            reader.onload = function(e) {  
+                const data = new Uint8Array(e.target.result);  
+                const workbook = XLSX.read(data, { type: 'array' });  
+                const firstSheetName = workbook.SheetNames[0];  
+                const worksheet = workbook.Sheets[firstSheetName];  
+                const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });  
+                  
+                // Clear existing rows  
+                const tableBody = document.getElementById('employeeTable').getElementsByTagName('tbody')[0];  
+                tableBody.innerHTML = '';  
+  
+                // Add new rows  
+                jsonData.forEach((row, index) => {  
+                    if (index > 0) { // Skip header row  
+                        const newRow = tableBody.insertRow();  
+                        row.forEach(cell => {  
+                            const newCell = newRow.insertCell();  
+                            newCell.textContent = cell;  
+                        });  
+                        const actionCell = newRow.insertCell();  
+                        actionCell.innerHTML = '<button class="button" onclick="editData(this)">Edit</button>';  
+                    }  
+                });  
+            };  
+            reader.readAsArrayBuffer(file);  
         } else {  
             alert("Silakan pilih file untuk diimpor.");  
         }  
