@@ -107,6 +107,39 @@
 </footer>  
   
 <script>  
+    // Fungsi untuk menyimpan data ke localStorage  
+    function saveDataToLocalStorage() {  
+        const tableData = [];  
+        const rows = document.querySelectorAll('#employeeTable tbody tr');  
+        rows.forEach(row => {  
+            const rowData = [];  
+            const cells = row.querySelectorAll('td');  
+            cells.forEach(cell => {  
+                rowData.push(cell.innerText);  
+            });  
+            tableData.push(rowData);  
+        });  
+        localStorage.setItem('employeeData', JSON.stringify(tableData));  
+    }  
+  
+    // Fungsi untuk memuat data dari localStorage  
+    function loadDataFromLocalStorage() {  
+        const storedData = localStorage.getItem('employeeData');  
+        if (storedData) {  
+            const tableBody = document.getElementById('employeeTable').getElementsByTagName('tbody')[0];  
+            const jsonData = JSON.parse(storedData);  
+            jsonData.forEach(row => {  
+                const newRow = tableBody.insertRow();  
+                row.forEach(cell => {  
+                    const newCell = newRow.insertCell();  
+                    newCell.textContent = cell;  
+                });  
+                const actionCell = newRow.insertCell();  
+                actionCell.innerHTML = '<button class="button" onclick="editData(this)">Edit</button>';  
+            });  
+        }  
+    }  
+  
     function exportData() {  
         alert("Fitur ekspor data belum diimplementasikan.");  
     }  
@@ -139,6 +172,9 @@
                         actionCell.innerHTML = '<button class="button" onclick="editData(this)">Edit</button>';  
                     }  
                 });  
+  
+                // Simpan data ke localStorage  
+                saveDataToLocalStorage();  
             };  
             reader.readAsArrayBuffer(file);  
         } else {  
@@ -169,7 +205,13 @@
         }  
         button.innerText = 'Edit';  
         button.setAttribute('onclick', 'editData(this)');  
+  
+        // Simpan data ke localStorage setelah edit  
+        saveDataToLocalStorage();  
     }  
+  
+    // Memuat data saat halaman dimuat  
+    window.onload = loadDataFromLocalStorage;  
 </script>  
   
 </body>  
